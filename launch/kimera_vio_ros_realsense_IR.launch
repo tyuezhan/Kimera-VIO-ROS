@@ -13,7 +13,7 @@
 
   <!-- Only used when parsing a rosbag -->
   <arg name="rosbag_path" default="default.bag"
-       unless="$(arg online)"/>"/>
+       unless="$(arg online)" />
 
   <!-- Frame IDs. These DO NOT match frame id's on the video streams, as the 
 	RealSense and Kimera publish conflicting Tf's -->
@@ -27,6 +27,10 @@
   <arg name="left_cam_topic"  value="/camera/infra1/image_rect_raw"/>
   <arg name="right_cam_topic" value="/camera/infra2/image_rect_raw"/>
   <arg name="imu_topic"       value="/camera/imu"/>
+  <!-- <arg name="use_online_cam_params" default="true"/> -->
+  <!-- <arg name="left_cam_info_topic"               default="/camera/infra1/camera_info"/> -->
+  <!-- <arg name="right_cam_info_topic"              default="/camera/infra2/camera_info"/> -->
+
 
   <!-- Launch actual pipeline -->
   <include file="$(find kimera_vio_ros)/launch/kimera_vio_ros.launch"
